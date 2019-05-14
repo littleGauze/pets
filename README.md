@@ -4,7 +4,7 @@
   - cat [https://thecatapi.com](https://thecatapi.com/)
   - dog [https://thedogapi.com](https://thedogapi.com/)
   
-  所以用这个api来练练前端。项目是用vue + vuex开发，适合新手练习看看。
+  所以用这个api来练练前端。项目是用vue + vuex开发，适合新手练习参考。
   
   ## 效果
   网站大概长这样
