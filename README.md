@@ -13,5 +13,27 @@
   
   [Live Demo](http://pets.gauze.life)
   
+  ## 配置
+  先到上面给的两个api网站上申请apiKey，然后配置到项目中即可，并修改本地服务器地址：
+  > src/config.js
+  ```js
+  const config = module.exports = {}
+
+  // third api info
+  config.apiBase = 'https://api.the{prefer}api.com/v1/'
+  config.apiKeys = { // change to your keys
+    cat: 'xxx-xxx-xxx',
+    dog: 'xxx-xxx-xxx'
+  }
+
+  // local server
+  if (process.env.NODE_ENV === 'production') {
+    config.serverBase = 'http://pets-server.xx.xx/' // replace with your pets-server address
+  } else {
+    config.serverBase = 'http://localhost:7001/'
+  }
+
+  ```
+  
   ## 服务端
-   服务端主要使用egg开发，地址在这里 [pets-server](https://github.com/littleGauze/pets)
+   服务端主要使用egg开发，地址在这里 [pets-server](https://github.com/littleGauze/pets-server)
