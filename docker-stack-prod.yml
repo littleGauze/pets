@@ -1,0 +1,21 @@
+---
+version: '3.2'
+services:
+  pets:
+    image: ${IMAGE}
+    networks:
+      - inner
+    deploy:
+      mode: replicated
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+      update_config:
+        parallelism: 1
+        delay: 10s
+networks:
+  inner:
+    external:
+      name: proxy-inner

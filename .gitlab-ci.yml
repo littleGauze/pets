@@ -1,0 +1,48 @@
+---
+stages:
+  - build
+  - deploy
+
+.variables: &var
+  DOCKER_HOST: '' # replace with you docker server address
+
+.before_script: &before
+  - mkdir -p ~/.docker
+  - '[[ ! -z "$DOCKER_CA" ]] && echo "$DOCKER_CA" > ~/.docker/ca.pem'
+  - '[[ ! -z "$DOCKER_CERT" ]] && echo "$DOCKER_CERT" > ~/.docker/cert.pem'
+  - '[[ ! -z "$DOCKER_KEY" ]] && echo "$DOCKER_KEY" > ~/.docker/key.pem'
+  - export DOCKER_HOST=$DOCKER_HOST
+  - export DOCKER_TLS_VERIFY=1
+
+build:
+  stage: build
+  image: docker:17.10.0-ce
+  before_script: *before
+  script:
+    - docker login -u $REGISTRY_USER -p $REGISTRY_PASSWORD
+    - docker build -t $REGISTRY_USER/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME .
+    - echo "build image $REGISTRY_USER/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME"
+    - docker push $REGISTRY_USER/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME
+  variables: *var
+  only:
+    - /^v\d+(\.\d+)*(-\w+)?$/
+  tags:
+    - default
+
+deploy:
+  stage: deploy
+  image: docker:17.10.0-ce
+  before_script: *before
+  script:
+    - '[[ -z "$IMAGE" ]] && export IMAGE="$REGISTRY_USER/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME"'
+    - '[[ -z "$STACK_NAME" ]] && export STACK_NAME="$CI_PROJECT_NAME"'
+    - echo "deploy image > $IMAGE"
+    - docker version
+    - docker stack deploy -c "./$DOCKER_STACK" "$CI_PROJECT_NAME"
+  variables:
+    <<: *var
+    DOCKER_STACK: docker-stack-prod.yml
+  only:
+    - /^v\d+(\.\d+)*(-\w+)?$/
+  tags:
+    - default

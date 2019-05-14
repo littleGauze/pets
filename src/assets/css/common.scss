@@ -1,0 +1,192 @@
+@import '../iconfont/iconfont';
+
+* {
+  box-sizing: border-box;
+  color: $fc-main;
+}
+
+body,
+p,
+blockquote,
+figure,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+menu,
+dir,
+ol,
+dl,
+dd,
+fieldset,
+input[type=radio],
+input[type=checkbox],
+input[type=range],
+pre,
+xmp,
+plaintext,
+listing {
+  margin: 0;
+  padding: 0;
+}
+
+input[type=search],
+input[type=button],
+input[type=submit],
+input[type=reset] {
+  -webkit-appearance: none;
+}
+
+body,
+html {
+  font-family: "PingFang SC",'-apple-system','HelveticaNeue' "Noto Sans TC", Arial, "Microsoft Yahei";
+  // color: #333;
+  // width: 100%;
+  height: 100%;
+  // background: #f0f8fc;
+  // background: #f7f7f7;
+}
+
+img {
+  border: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset,
+iframe {
+  border: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: #364863;
+}
+
+li:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  margin: 0;
+}
+
+select,
+button,
+input {
+  color: inherit;
+}
+
+html {
+  -webkit-text-size-adjust: none;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.txt-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.f-l {
+  float: left;
+}
+.f-r {
+  float: right;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid green;
+  -webkit-text-fill-color: green;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+// mint ui style overload
+.mint-toast.is-placemiddle {
+  z-index: 9;
+}
+.mint-toast {
+  i, span {
+    color: #fff;
+  }
+  i {
+    font-size: 70px;
+  }
+  span {
+    font-size: 25px;
+  }
+}
+span.mint-indicator-text {
+  font-size: 25px;
+}
+
+.mint-msgbox {
+  .mint-msgbox-header {
+    padding-top: 20px;
+  }
+  .mint-msgbox-title {
+    font-size: 36px;
+  }
+  .mint-msgbox-message,
+  .mint-msgbox-input {
+    font-size: 30px;
+  }
+  .mint-msgbox-content {
+    min-height: 12vw;
+  }
+  .mint-msgbox-btns {
+    height: 80px;
+    .mint-msgbox-btn {
+      font-size: 30px;
+      &.mint-msgbox-cancel {
+        color: $color-red;
+      }
+      &.mint-msgbox-confirm {
+        color: $color-main;
+      }
+    }
+  }
+}
