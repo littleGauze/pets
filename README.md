@@ -6,6 +6,8 @@
   
   所以用这个api来练练前端。项目是用vue + vuex开发，适合新手练习参考。
   
+  > 网站的页面设计有借鉴：[tumblr](https://www.tumblr.com/)
+  
   ## 效果
   网站大概长这样
  
