@@ -11,9 +11,9 @@
   ## 效果
   网站大概长这样
  
-  <img src="http://sources.gauze.life/pets/pets1.jpg" width="200"> <img src="http://sources.gauze.life/pets/pets3.jpg" width="200"> <img src="http://sources.gauze.life/pets/pets8.jpg" width="200"><img src="http://sources.gauze.life/pets/pets4.png" width="200">
+  <img src="http://sources.fun4l0ve.com/pets/pets1.jpg" width="200"> <img src="http://sources.fun4l0ve.com/pets/pets3.jpg" width="200"> <img src="http://sources.fun4l0ve.com/pets/pets8.jpg" width="200"><img src="http://sources.fun4l0ve.com/pets/pets4.png" width="200">
   
-  [Live Demo](http://pets.gauze.life) （请使用手机查看，效果更佳）
+  [Live Demo](http://fun4l0ve.com) （请使用手机查看，效果更佳）
   
   ## 配置
   先到上面给的两个api网站上申请apiKey，然后配置到项目中即可，并修改本地服务器地址：
